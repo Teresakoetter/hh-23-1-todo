@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 import {NewTodo, Todo} from "./Todo";
 import axios from "axios";
+import {toast} from "react-toastify";
 
 export default function useTodos() {
 
@@ -24,7 +25,9 @@ export default function useTodos() {
                 //                       , und wir fügen das neue Todo zusätzlich hinzu
                 setTodos([...todos, addTodoResponse.data])
             })
-            .catch(console.error)
+            .catch((error) => {
+                toast.error("Unkown Error, try again later! " + error.response.statusText, {autoClose: 10000})
+            })
     }
 
     function updateTodo(todo: Todo) {

@@ -1,10 +1,12 @@
+import {Typography} from "@mui/material";
+import React from "react";
 
 
 export default function Header() {
 
     return (
         <div>
-            <h1>Todo Board</h1>
+            <Typography variant='h1'>Todo Board</Typography>
         </div>
     )
 }

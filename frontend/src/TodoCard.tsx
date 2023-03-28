@@ -1,5 +1,6 @@
 import './TodoCard.css'
 import {Todo} from "./Todo";
+import {Button, Typography} from "@mui/material";
 
 type Props = {
     todo: Todo,
@@ -31,11 +32,11 @@ export default function TodoCard(props: Props) {
 
     return (
         <div className='todo-card'>
-            <p>{props.todo.description}</p>
-            <p>{props.todo.status}</p>
-            <p>{props.todo.id}</p>
-            {props.todo.status !== 'DONE' && <button onClick={onAdvanceClick}>Advance</button>}
-            {props.todo.status === 'DONE' && <button onClick={onDeleteClick}>Delete</button>}
+            <Typography>{props.todo.description}</Typography>
+            <Typography>{props.todo.status}</Typography>
+            <Typography>{props.todo.id}</Typography>
+            {props.todo.status !== 'DONE' && <Button onClick={onAdvanceClick}>Advance</Button>}
+            {props.todo.status === 'DONE' && <Button onClick={onDeleteClick}>Delete</Button>}
 
         </div>
     )

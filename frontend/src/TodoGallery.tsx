@@ -1,6 +1,7 @@
 import './TodoGallery.css'
 import {Todo} from "./Todo";
 import TodoCard from "./TodoCard";
+import {Typography} from "@mui/material";
 
 type Props = {
     todos: Todo[],
@@ -17,7 +18,7 @@ export default function TodoGallery(props: Props) {
     return (
         <div className='todo-gallery'>
             <div className='todo-gallery_column'>
-                <h2>Todo</h2>
+                <Typography variant='h2'>Todo</Typography>
                 {
                     openTodos.map((todo) => <TodoCard key={todo.id}
                                                       todo={todo}
@@ -26,7 +27,7 @@ export default function TodoGallery(props: Props) {
                 }
             </div>
             <div className='todo-gallery_column'>
-                <h2>Doing</h2>
+                <Typography variant='h2'>Doing</Typography>
                 {
                     inProgressTodos.map((todo) => <TodoCard key={todo.id}
                                                             todo={todo}
@@ -35,7 +36,7 @@ export default function TodoGallery(props: Props) {
                 }
             </div>
             <div className='todo-gallery_column'>
-                <h2>Done</h2>
+                <Typography variant='h2'>Done</Typography>
                 {
                     doneTodos.map((todo) => <TodoCard key={todo.id}
                                                       todo={todo}

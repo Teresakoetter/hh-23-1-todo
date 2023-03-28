@@ -1,5 +1,6 @@
 import {FormEvent, useState} from "react";
 import {NewTodo} from "./Todo";
+import {Button, TextField} from "@mui/material";
 
 type AddTodoProps = {
     addTodo: (newTodo: NewTodo) => void
@@ -22,10 +23,12 @@ export default function AddTodo(props: AddTodoProps) {
     return (
         <div>
             <form onSubmit={onSaveTodo}>
-                <input value={description} onChange={(event) => {
-                    setDescription(event.target.value)
-                }}/>
-                <button type='submit'>Save</button>
+                <TextField label='Description'
+                           value={description}
+                           onChange={(event) => {
+                               setDescription(event.target.value)
+                           }}/>
+                <Button className='mybutton' variant='contained' color="success" type='submit'>Save</Button>
             </form>
         </div>
     )
